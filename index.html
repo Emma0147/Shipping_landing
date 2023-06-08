@@ -1,15 +1,8 @@
-<?php 
-include 'dbconnect.php';
-if (isset($_GET['success'])) {
-
-} 
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Express Delivery Service</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -17,7 +10,7 @@ if (isset($_GET['success'])) {
 
 	<nav>
 		<a href="#" class="logo">
-			<img class="zamba" src="images2.jpg">
+			<img class="zamba" src="images4.jpg">
 		</a>
 
 		<ul class="menu">
@@ -44,7 +37,7 @@ if (isset($_GET['success'])) {
 
 			<div class="feature-box">
 				<div class="f-img">
-					<img src="webicon.jpg">
+					<img src="image7.jpg">
 				</div>
 				<div class="f-text">
 					<h4>Create Shipment</h4>
@@ -55,7 +48,7 @@ if (isset($_GET['success'])) {
 
 			<div class="feature-box">
 				<div class="f-img">
-					<img src="softicon.png">
+					<img src="image6.png">
 				</div>
 				<div class="f-text">
 					<h4>Track Shhipment</h4>
@@ -66,7 +59,7 @@ if (isset($_GET['success'])) {
 
 			<div class="feature-box">
 				<div class="f-img">
-					<img src="appicon.png">
+					<img src="image1.png">
 				</div>
 				<div class="f-text">
 					<h4>Contact Us</h4>
@@ -94,7 +87,7 @@ if (isset($_GET['success'])) {
 			<h1>Contact Us</h1>
 			<p>Contact us for a reliable and efficient shipping services.</p>
 		</div>
-		<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+		<form>
 			<input type="text" name="user" placeholder="Your full name">
 			<input type="email" name="email" placeholder="Your E-mail">
 			<textarea name="message" placeholder="Enter your message here......"></textarea>
@@ -102,24 +95,5 @@ if (isset($_GET['success'])) {
 		</form>
 	</section>
 
-	<?php 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    	$user = $_POST['user'];
-    	$email = $_POST['email'];
-    	$message = $_POST['message'];
-
-    	$sql = "INSERT INTO userinfodata (user,email,message) VALUES ('$user','$email','$message')";
-
-    	if (mysqli_query($connect, $sql)) {
-    		header("location: index.php?success");
-    	} else {
-    		echo "Registration failed! " . $sql. "<br>" .mysqli_error($connect);
-    	}
-
-    	mysqli_close($connect);
-    }
-	?>
-   
-<script src="index.js"></script>
 </body>
 </html>
